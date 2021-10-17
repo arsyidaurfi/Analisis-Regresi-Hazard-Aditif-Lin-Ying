@@ -12,31 +12,31 @@ proportionality assumption is made.
 Variables
 
 This example case used 1 dependent variables and 6 independent variables
-1. LOS (Length of Stay)
+1. LOS (Length of Stay) :
    Length of time breat cancer patient hospitalization (hospital care).
-2. Status
+2. Status :
    This is censorship. Data is censored if a patient breast cancer dead
    and data is uncensored when a breast cancer patient is declared
    improved and allowed to leavehospital. 
    Categorized into:
    0 = censored (died)
    1 = uncensored (improved)
-3. Age
+3. Age :
    Patient's age when admission for hospitalization
-4. MS (Marital Status)
+4. MS (Marital Status) :
    0 = Single
    1 = Married
-5. Treatment
+5. Treatment :
    0 = Hospitalization/General Condition Improvement
    1 = Radiotherapy
    2 = Chemotherapy
    3 = Surgery
-6. Metastasis
+6. Metastasis :
    0 = No metastases
    1 = metastases
-7. Anemia
+7. Anemia :
    0 = No Anemia
    1 = Anemia
-8. Comorbidities
+8. Comorbidities :
    0 = No Comorbidities
    1 = Comorbidities
