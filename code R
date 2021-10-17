@@ -38,11 +38,11 @@ title(main="Kaplan-Meier Plot of Treatment",xlab="LOS", ylab="Survival Probabili
 legend("topright",c("Hozpitalization","Radiotherapy","Chemoteraphy","Surgery"),col=c("red","blue","black","green"),lty=1)
 
 #KurvaMetastasis
-KMMetas=survfit(KM~Metastasis)
+KMMetas=survfit(KM~Metastases)
 summary(KMMetas)
 plot(KMMetas,col=c("red","blue"))
-title(main="Kaplan-Meier Plot of Metastasis",xlab="LOS", ylab="Survival Probability")
-legend("topright",c("No Metastasis","Metastasised"),col=c("red","blue"),lty=1)
+title(main="Kaplan-Meier Plot of Metastases",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("No Metastases","Metastases"),col=c("red","blue"),lty=1)
 
 #KurvaAnemia
 KMAnemia=survfit(KM~Anemia)
