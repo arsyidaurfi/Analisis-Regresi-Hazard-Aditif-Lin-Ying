@@ -1,0 +1,66 @@
+mydata=read.csv(file.choose(),header=TRUE,sep=";")
+
+#Install Packages
+install.packages(ahaz)
+install.packages(survival)
+
+#Load Library
+library(ahaz)
+library(survival)
+
+#Data Description
+str(mydata)
+summary(mydata)
+
+#Kaplan-Meier Estimation
+#Kaplan-Meier
+KM=Surv(LOS,Status)
+summary(KM)
+
+#Kaplan-Meier Plot of LOS
+KMLOS=survfit(KM~1)
+summary(KMLOS)
+plot(KMLOS,col=c("red","black","black"))
+title(main="Kaplan-Meier Plot of LOS",xlab="LOS", ylab="Survival Probability")
+
+#Kaplan-Meier Plot of Marital Status
+KMMS=survfit(KM~MS)
+summary(KMMS)
+plot(KMMS,col=c("red","blue"))
+title(main="Kaplan-Meier Plot of Marital Status",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("Married","Single"),col=c("blue","red"),lty=1)
+
+#Kaplan-Meier Plot of Treatment
+KMTreatment=survfit(KM~Treatment)
+summary(KMTreatment)
+plot(KMTreatment,col=c("red","blue","black","green"))
+title(main="Kaplan-Meier Plot of Treatment",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("Hozpitalization","Radiotherapy","Chemoteraphy","Surgery"),col=c("red","blue","black","green"),lty=1)
+
+#KurvaMetastasis
+KMMetas=survfit(KM~Metastasis)
+summary(KMMetas)
+plot(KMMetas,col=c("red","blue"))
+title(main="Kaplan-Meier Plot of Metastasis",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("No Metastasis","Metastasised"),col=c("red","blue"),lty=1)
+
+#KurvaAnemia
+KMAnemia=survfit(KM~Anemia)
+summary(KMAnemia)
+plot(KMAnemia,col=c("red","blue"))
+title(main="Kaplan-Meier Plot of Anemia",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("No Anemia","Anemia"),col=c("red","blue"),lty=1)
+
+#KurvaComorbidities
+KMC=survfit(KM~C)
+summary(KMC)
+plot(KMC,col=c("red","blue"))
+title(main="Kaplan-Meier Plot of Comorbidities",xlab="LOS", ylab="Survival Probability")
+legend("topright",c("No comorbidities","Comorbidities"),col=c("red","blue"),lty=1)
+
+#Hazard Aditif Lin-Ying
+dataLOS=mydata$LOS+runif(159,0,0.00001)
+Survival=Surv(dataLOS,mydata$Status)
+x1=as.matrix(mydata[,c(9,11)])
+model1=ahaz(Survival,x1)
+summary(model1)
