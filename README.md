@@ -9,8 +9,6 @@ be estimated directly and easier to interpret. In addition, this method can asse
 risk (In this study is clinical improvement) and more flexible because no 
 proportionality assumption is made. 
 
-Variables
-
 This example case used 1 dependent variables and 6 independent variables
 1. LOS (Length of Stay) :
    Length of time breat cancer patient hospitalization (hospital care).
