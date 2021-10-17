@@ -1,4 +1,4 @@
-# Analisis-Regresi-Hazard-Aditif-Lin-Ying
+# Regresi-Hazard-Aditif-Lin-Ying
 
 Survival analysis is a statistical procedure for analyzing data with time to a certain event as a response variable. 
 If we want to see the effect of the independent variable on the event response time 
